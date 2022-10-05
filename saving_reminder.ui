@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>SavingReminder</class>
+ <widget class="QWidget" name="SavingReminder">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -24,7 +24,7 @@
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="commentLabel">
       <property name="minimumSize">
        <size>
         <width>0</width>
@@ -42,7 +42,7 @@
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QPlainTextEdit" name="plainTextEdit">
+     <widget class="QPlainTextEdit" name="commentTextEdit">
       <property name="minimumSize">
        <size>
         <width>300</width>
@@ -52,7 +52,7 @@
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="saveBtn">
       <property name="maximumSize">
        <size>
         <width>100</width>
