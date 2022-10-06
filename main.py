@@ -16,8 +16,8 @@ class SavingReminder(QtWidgets.QWidget):
         self.ui = QtUiTools.QUiLoader().load(UI_FILE, parentWidget=self)
         
 
+        self.comment = None
 
-        
         self.ui.saveBtn.clicked.connect(self.save_file)
 
 
@@ -27,6 +27,7 @@ class SavingReminder(QtWidgets.QWidget):
         
     def save_file(self):
         self.comment = self.ui.commentTextEdit.toPlainText()
+
 
 
 
