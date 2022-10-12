@@ -29,25 +29,32 @@ class SavingReminder(QtWidgets.QWidget):
         self.ui = QtUiTools.QUiLoader().load(UI_FILE, parentWidget=self)
         
 
-        self.comment = None
+        # set remind time combo box
+        for remind_time in range(30, 180, 30):
+            self.ui.remindTimeComboBox.addItem(str(remind_time))
+            
+        self.remind_time_value = 30 # by default 30 minutes
+        self.ui.remindTimeComboBox.currentIndexChanged.connect(self.get_remind_time_value)
+        
+        
+        self.comment = ""
 
         self.ui.saveBtn.clicked.connect(self.save_file)
-
-
-
 
         
     def save_file(self):
         self.comment = self.ui.commentTextEdit.toPlainText()
+
+    def get_remind_time_value(self):
+        self.remind_time_value = self.ui.remindTimeComboBox.currentText()
+        print(self.remind_time_value)
 
     def closeEvent(self, event):
         # will make sure to kill the application by unparenting the hou qt main window
         self.setParent(None)
 
 
-
-
-
+#-------------------------------------
 
 def start():
     win = SavingReminder()
