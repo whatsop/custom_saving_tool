@@ -1,3 +1,16 @@
+"""
+content : a tool that will pop up every x minutes to ask if you would like to save your current scene, you can add a comment
+which will create a txt file with the comment you have written inside
+
+version : 0.1.0
+date : 10/05/2022
+
+how to : 
+dependencies : PySide2, hou
+
+author : Arup Kasimov
+"""
+
 import os
 import sys
 import datetime, time
@@ -22,12 +35,14 @@ class SavingReminder(QtWidgets.QWidget):
 
 
 
-    def closeEvent(self, event):
-        self.setParent(None)
+
         
     def save_file(self):
         self.comment = self.ui.commentTextEdit.toPlainText()
 
+    def closeEvent(self, event):
+        # will make sure to kill the application by unparenting the hou qt main window
+        self.setParent(None)
 
 
 
@@ -36,7 +51,7 @@ class SavingReminder(QtWidgets.QWidget):
 
 def start():
     win = SavingReminder()
-    win.setParent(hou.qt.mainWindow(), QtCore.Qt.Window)
+    win.setParent(hou.qt.mainWindow(), QtCore.Qt.Window) # parenting with hou qt main window so the application does not close directly just after starting
     win.show()
 
 start()
