@@ -8,6 +8,8 @@ The idea behind is to keep track of what you did on a spefific saved scene, thin
 
 ### **How to use it ?**
 
+Clone the repository somewhere.
+
 There are several ways of using it inside Houdini, but this is one will work :
 First, in houdini, you need to create a new shelf, if you do not have any custom shelf already, then create a new tool, you edit the tool and copy paste this in script :
 
