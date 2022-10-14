@@ -10,7 +10,7 @@ The idea behind is to keep track of what you did on a spefific saved scene, thin
 
 Clone the repository somewhere.
 
-In the python code file "main.py", modify the UI_FILE const variable to the your path
+In the python code file "main.py", modify the UI_FILE const variable to your path pointing to the ui file
 
 There are several ways of using it inside Houdini, but this is one will work :
 First, in houdini, you need to create a new shelf, if you do not have any custom shelf already, then create a new tool, you edit the tool and copy paste this in script :
